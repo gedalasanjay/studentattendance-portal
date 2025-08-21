@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+    
+</head>
+<body>
+
+<div class="dashboard-card">
+    <div class="dashboard-header">
+        📋 Student Dashboard
+    </div>
+    <div class="dashboard-body">
+        <h3>Your Attendance</h3>
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <% if (records.length > 0) { %>
+                <% records.forEach(r => { %>
+                    <tr>
+                        <td><%= r.name %></td>
+                        <td><%= r.roll_no %></td>
+                        <td><%= r.date.toISOString().split('T')[0] %></td>
+                        <td><%= r.status %></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="4">No attendance records found</td>
+                </tr>
+            <% } %>
+        </table>
+        <a href="/logout" class="logout-btn">Logout</a>
+    </div>
+</div>
+
+</body>
+</html>

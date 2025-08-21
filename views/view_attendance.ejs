@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>View Attendance</title>
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">📅 Attendance Records</div>
+    <div class="card-body">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Roll No</th>
+                <th>Date</th>
+                <th>Status</th>
+            </tr>
+            <% if (records.length > 0) { %>
+                <% records.forEach(r => { %>
+                    <tr>
+                        <td><%= r.name %></td>
+                        <td><%= r.roll_no %></td>
+                        <td><%= r.date.toISOString().split('T')[0] %></td>
+                        <td><%= r.status %></td>
+                    </tr>
+                <% }) %>
+            <% } else { %>
+                <tr>
+                    <td colspan="4">No attendance records found</td>
+                </tr>
+            <% } %>
+        </table>
+        <br>
+        <a href="/admin/mark-attendance" class="btn btn-edit">➕ Mark Attendance</a>
+        <a href="/admin" class="btn btn-edit">Back to Dashboard</a>
+    </div>
+</div>
+
+</body>
+</html>

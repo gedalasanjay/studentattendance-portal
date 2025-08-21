@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Attendance Portal - Login</title>
+    <link rel="stylesheet" href="/style.css">
+   
+</head>
+<body>
+
+<div class="login-card">
+    <div class="login-header">
+        <span>📋 Student Attendance Portal</span>
+    </div>
+    <form action="/login" method="POST">
+        <div class="login-body">
+            <label>Username</label>
+            <input type="text" name="username" placeholder="Enter your username" required>
+
+            <label>Password</label>
+            <input type="password" name="password" placeholder="Enter your password" required>
+
+            <label>Login As</label>
+            <select name="role" required>
+                <option value="">Select role</option>
+                <option value="admin">Admin</option>
+                <option value="student">Student</option>
+            </select>
+
+            <button type="submit">Login</button>
+        </div>
+    </form>
+    <div class="login-footer">
+        <span>Need help?</span>
+        <a href="#">Contact support</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Student</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">✏️ Edit Student</div>
+    <div class="card-body">
+        <form action="/admin/edit-student/<%= student.id %>" method="POST">
+            <label>Name</label>
+            <input type="text" name="name" value="<%= student.name %>" required>
+            <label>Roll Number</label>
+            <input type="text" name="roll_no" value="<%= student.roll_no %>" required>
+            <button type="submit" class="btn btn-edit">Update Student</button>
+        </form>
+        <div class="links">
+            <a href="/admin/view-students" class="btn btn-edit">Back to Students List</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

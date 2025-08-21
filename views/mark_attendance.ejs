@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mark Attendance</title>
+   <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">🗓 Mark Attendance</div>
+    <div class="card-body">
+        <form action="/admin/mark-attendance" method="POST">
+            <label>Select Date</label>
+            <input type="date" name="date" required>
+            <% students.forEach(student => { %>
+                <p>
+                    <strong><%= student.name %> (<%= student.roll_no %>)</strong>
+                    <select name="student_<%= student.id %>">
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                    </select>
+                </p>
+            <% }) %>
+            <button type="submit" class="btn btn-edit">Save Attendance</button>
+        </form>
+        <div class="links">
+            <a href="/admin/view-attendance" class="btn btn-edit">Back to Attendance Records</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

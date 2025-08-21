@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Student</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+<div class="card">
+    <div class="card-header">➕ Add Student</div>
+    <div class="card-body">
+        <form action="/admin/add-student" method="POST">
+            <label>Name</label>
+            <input type="text" name="name" required>
+            <label>Roll Number</label>
+            <input type="text" name="roll_no" required>
+            <button type="submit" class="btn btn-edit">Add Student</button>
+        </form>
+        <div class="links">
+            <a href="/admin/view-students" class="btn btn-edit">Back to Students List</a>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
